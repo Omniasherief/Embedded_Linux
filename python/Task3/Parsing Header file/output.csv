@@ -1,0 +1,6 @@
+Function Prototype,Unique ID
+"('CLCD_voidSendCmd', 'int Copy_u8Cmd')",IDX001
+"('CLCD_voidSendData', 'int Copy_u8Data')",IDX002
+"('CLCD_VoidInit', 'void')",IDX003
+"('CLCD_u8SendString', 'const char* Copy_pchString')",IDX004
+"('CLCD_VoidGoToXY', 'int Copy_u8Xpos,int Copy_u8Ypos')",IDX005
