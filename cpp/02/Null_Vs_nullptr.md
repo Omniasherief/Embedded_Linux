@@ -28,7 +28,7 @@ A comparison table between `null` and `nullptr`:
 | **Type Safety** | Can be ambiguous and lead to conversion errors | Enforces type safety, preventing accidental conversions |
 | **Templates** | May cause issues with some template types | Works seamlessly with templates |
 
-             |
+             
 **Why Use nullptr?**
 
 
