@@ -42,7 +42,7 @@ A comparison table between `null` and `nullptr`:
 
 **Potential Ambiguity with null:**
 
-```
+```cpp
 // This might be interpreted as assigning the integer value 0 to the pointer
 int* ptr = null;  // Can be error-prone
 
@@ -54,7 +54,7 @@ int* ptr = nullptr;
 In the first example, the compiler might interpret null as an integer and convert it to an int* pointer, potentially leading to errors.
 
 **Template Compatibility:**
-```
+``` cpp
 
 template <typename T>
 void print_value(T* ptr) {
@@ -78,7 +78,7 @@ The print_value template might have issues with null depending on the pointer ty
 
 **Clarity and Type Safety:**
 
-```
+```cpp
 void check_pointer(void* ptr) {
   if (ptr == null) {  // Less clear about pointer type
     std::cout << "Pointer is null." << std::endl;
