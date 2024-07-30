@@ -64,7 +64,21 @@ float b{3.14f}; // uniformly initialized to 3.14
 std::string str{"Hello, World!"}; // uniformly initialized to "Hello, World!"
 
 ```
+### 6. Aggregate Initialization
 
+Aggregate initialization is used to initialize aggregates, such as arrays and structs, using an initializer list. An aggregate type in C++ is an array or a class (typically a struct) that has no user-declared constructors, no private or protected non-static data members, no virtual functions, and no virtual, private, or protected base classes.
+
+```cpp
+
+struct Point {
+    int x;
+    int y;
+};
+
+Point p = {1, 2}; // aggregate-initialized to x=1, y=2
+int arr[3] = {1, 2, 3}; // aggregate-initialized array
+```
+ 
 ## Best Practices
 
 ### 1. Prefer Uniform Initialization
