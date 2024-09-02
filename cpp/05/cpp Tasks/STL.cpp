@@ -1,7 +1,9 @@
 /*STL containers, iterators, algorithms, and functors*/
 
-
+#include <cstddef>
 #include <iostream>
+#include <iterator>
+#include <ostream>
 #include<vector>
 #include <algorithm>
 #include <deque>
@@ -12,11 +14,19 @@
 #include <queue>
 #include <stack>
 #include <unordered_map>
+//#include<tuple>
+#include<bitset>
+#include <numeric> // For accumulate
+#include <utility> // For std::swap
+
+
+
+
 void testVector()
 {
 
 //Vectors are dynamic arrays that can grow in size. They support random access and efficient insertion/removal at the end
-    std::vector<int> vec={1,4,3,2,5};
+    std::vector<int> vec={1,3,2,4,3,2,5};
     
     //iterating over the vector using an iterator
     std::cout<<"Vector elements : ";
@@ -30,6 +40,14 @@ void testVector()
     //Accessing elments
     std::cout <<"First elment in Queue: "<<vec.front()<<std::endl;
     std::cout <<"Last element in Queue: "<<vec.back()<< std::endl;
+
+    //partial sorting
+    std::partial_sort(vec.begin(), vec.begin() + 3, vec.end());
+    std::cout << "Partially sorted vector (first 3 elements): ";
+    for (int v : vec) {
+        std::cout << v << " ";
+    }
+    std::cout << std::endl;
 
     //sorting the vector
     std::sort(vec.begin(),vec.end());
@@ -48,6 +66,26 @@ void testVector()
     }
     std::cout << std::endl;
 
+    // Removing duplicates (consecutive)
+    vec.push_back(1);
+    vec.push_back(1);
+    auto last = std::unique(vec.begin(), vec.end());
+    vec.erase(last, vec.end());
+    std::cout << "Vector after removing consecutive duplicates: ";
+    for (int v : vec) {
+        std::cout << v << " ";
+    }
+    std::cout << std::endl;
+
+
+    //  Generating a sequence of values
+    std::iota(vec.begin(), vec.end(), 3);  // Fills vec with 1, 2, 3, ...
+    std::cout << "Vector after iota: ";
+    for (int v : vec) {
+        std::cout << v << " ";
+    }
+    std::cout << std::endl;
+    
     //Removing
     vec.erase(vec.begin() + 1); // Removes the second element
     std::cout << "Vector after erasing the second element: ";
@@ -285,9 +323,243 @@ void testUnorderedMap()
     std::cout << std::endl;
 }
 
+
+void testMultimapAndMultiset()
+{
+//Multimaps and multisets are similar to maps and sets but allow duplicate keys
+   
+    // Multimap
+    std::multimap<int, std::string> mmap = {{1, "one"}, {2, "two"}, {1, "uno"}};
+    std::cout << "Multimap elements: ";
+    for (const auto& pair : mmap) {
+        std::cout << "{" << pair.first << ": " << pair.second << "} ";
+    }
+    std::cout << std::endl;
+
+    // Multiset
+    std::multiset<int> mset = {1, 2, 4,2, 3, 3, 3};
+    std::cout << "Multiset elements: ";
+    for (const auto& val : mset) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+}
+
+
+
+
+void testPairandTuple()
+{
+  //Pairs and tuples are useful for storing a collection of values together, especially when they are of different types.
+   //pairs
+   std::pair<int,std::string> mypair(1,"omnia");
+   std::cout <<"pair: {"<< mypair.first <<","<<mypair.second <<"}"<< std::endl;
+   //Tuple
+   std::tuple<int,std::string,double> myTuple(2,"sherief",3.5);
+   std::cout <<"Tuple: {"<< std::get<0>(myTuple)<<","
+                         << std::get<1>(myTuple)<< ","
+                         << std::get<2>(myTuple)<< "}" <<std::endl;
+
+    
+    //modifying a tuple elements
+   std::get<1>(myTuple) = "mahmoud";
+   std::get<0>(myTuple)=3;
+    std::cout << "Modified Tuple: {"
+              << std::get<0>(myTuple) << ", "
+              << std::get<1>(myTuple) << ", "
+              << std::get<2>(myTuple) << "}" << std::endl;
+}
+
+
+
+void testBitset()
+{//std::bitset provides a way to handle a fixed number of bits (binary digits).
+    std::bitset<8> bits(42); // 00101010
+    std::cout << "Bitset: " << bits << std::endl;
+    std::cout << "Bitset with all bits set: " << bits.set() << std::endl;
+    std::cout << "Bitset with all bits reset: " << bits.reset() << std::endl;
+    std::cout << "Bitset with bit 3 flipped: " << bits.flip(3) << std::endl;
+
+    // Checking individual bits
+    std::cout << "Bit 3 is " << (bits[3] ? "set" : "unset") << std::endl;
+}
+
+
+void testStringOperations()
+{
+    std::string str="omnia ,sherief ";
+
+    //find substring
+    size_t found =str.find("omnia");
+    if(found != std::string::npos)
+    {
+        std::cout <<"omnia is found at position : "<<found<<std::endl;
+    }
+
+    // Reversing
+    std::reverse(str.begin(),str.end());
+    std::cout <<"Reversed string" <<str <<std::endl;
+    
+    //Transform to uppercase
+    std::transform(str.begin(),str.end(), str.begin(), ::toupper);
+    std::cout << "Uppercase string: " << str << std::endl;
+}
+
+void testSetoperations()
+{ //STL provides algorithms to perform set operations like union, intersection, and difference.
+   std::set<int> set1 ={1,2,3,4,5};
+   std::set<int> set2={2,3,4,6,7,8};
+   std::vector<int> result;
+
+   //set union
+   //it does not repeat numbers
+   std::set_union(set1.begin(),set1.end(),set2.begin(),set2.end(),std::back_inserter(result));
+   std::cout <<"union of sets: ";
+   for(const auto&val: result)
+   {
+    std::cout <<val<< " ";
+   }
+   std::cout<< std::endl;
+   
+
+   //set insertion
+    result.clear();
+    std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::back_inserter(result));
+    std::cout << "Intersection of sets: ";
+    for (const auto& val : result) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    // Set Difference
+    result.clear();
+    std::set_difference(set1.begin(), set1.end(), set2.begin(), set2.end(), std::back_inserter(result));
+    std::cout << "Difference of sets (set1 - set2): ";
+    for (const auto& val : result) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+}
+
+void testHeapOperations() {
+    //The STL provides functions to work with heaps, which are specialized tree-based data structures that satisfy the heap property
+
+    std::vector<int> heap = {10, 300,20, 30, 5, 15};
+    //convert to heap
+
+    std::make_heap(heap.begin(),heap.end());
+     std::cout << "Heap after make_heap: ";
+    for (const auto& val : heap) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+      // Push a new element onto the heap
+    heap.push_back(99);
+    std::push_heap(heap.begin(), heap.end());
+    std::cout << "Heap after push_heap (99): ";
+    for (const auto& val : heap) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    // Pop the largest element off the heap
+    std::pop_heap(heap.begin(), heap.end());
+    heap.pop_back();
+    std::cout << "Heap after pop_heap: ";
+    for (const auto& val : heap) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    // Sort the heap
+    std::sort_heap(heap.begin(), heap.end());
+    std::cout << "Heap after sort_heap: ";
+    for (const auto& val : heap) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    /*Maintaining the max-heap property means ensuring that, in a max-heap, every parent node is greater than or equal to its child nodes. This property must hold true for the entire heap
+    After make_heap: The heap should be something like {300, 30, 20, 10, 5, 15}.
+After push_heap(99): The heap should be something like {300, 99, 20, 10, 5, 15, 30}.
+After pop_heap: The heap should be something like {99, 30, 20, 10, 5, 15}.
+After sort_heap: The final sorted vector should be {5, 10, 15, 20, 30, 99}.*/
+}
+
+
+void testTransformandAccumulate()
+{//std::transform and std::accumulate are powerful algorithms for applying operations across ranges.
+    std::vector<int> vec={1,2,3,4,5};
+
+    //applying  a transformation
+      std::transform(vec.begin(), vec.end(), vec.begin(), [](int x) { return x * 2; });
+    std::cout << "Transformed vector (doubled elements): ";
+    for (const auto& val : vec) {
+        std::cout << val << " ";
+    }
+    std::cout << std::endl;
+
+    // Accumulating the sum of elements
+    int sum = std::accumulate(vec.begin(), vec.end(), 0);
+    std::cout << "Sum of elements: " << sum << std::endl;
+
+}
+
+void testPermutations()
+{//algorithms for generating permutations and combinations of sequences.
+      std::vector<int> vec = {1, 2, 3};
+//3!=3×2×1=6
+    std::cout << "Permutations of {1, 2, 3}:" << std::endl;
+    do {
+        for (const auto& val : vec) {
+            std::cout << val << " ";
+        }
+        std::cout << std::endl;
+    } while (std::next_permutation(vec.begin(), vec.end()));
+}
+
+
+
+void testBoundandBinarySearch()
+{//algorithms are useful for searching and working with sorted ranges
+    std::vector<int> vec = {1, 2, 4, 3, 5, 6, 8};
+    
+    //Binary search
+    bool found =std::binary_search(vec.begin(),vec.end(),4);
+     std::cout << "Element 4 " << (found ? "found" : "not found") << " in the vector." << std::endl;
+
+     // Lower bound (first position where element is not less than 4)
+    auto lower = std::lower_bound(vec.begin(), vec.end(), 4);
+    std::cout << "Lower bound of 4: " << (lower - vec.begin()) << std::endl;
+
+    // Upper bound (first position where element is greater than 4)
+    auto upper = std::upper_bound(vec.begin(), vec.end(), 4);
+    std::cout << "Upper bound of 4: " << (upper - vec.begin()) << std::endl;
+}
+
+
+void testUtilities() {
+    int a = 5, b = 10;
+
+    // Swap
+    std::swap(a, b);
+    std::cout << "After swap: a = " << a << ", b = " << b << std::endl;
+
+    // Min and Max
+    int minVal = std::min(a, b);
+    int maxVal = std::max(a, b);
+    std::cout << "Min value: " << minVal << ", Max value: " << maxVal << std::endl;
+
+    // Pair
+    std::pair<int, int> p = std::make_pair(a, b);
+    std::cout << "Pair: {" << p.first << ", " << p.second << "}" << std::endl;
+}
+
 int main()
 {
-   // testVector();
+   testVector();
    // testDeque();
    // testList();
    //testSet();
@@ -296,6 +568,16 @@ int main()
    //testQueue();
    //testStack();
    //testPriorityQueue();
-   testUnorderedMap();
+   //testUnorderedMap();
+   //testPairandTuple();
+   //testBitset();
+   //testMultimapAndMultiset();
+   //testStringOperations();
+   //testSetoperations();
+   //testHeapOperations();
+   //testTransformandAccumulate();
+   //testPermutations();
+   //testBoundandBinarySearch();
+   //testUtilities();
     return 0;
 }
