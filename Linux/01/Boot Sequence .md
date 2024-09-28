@@ -1,4 +1,4 @@
-The Linux boot sequence is a detailed and structured process, involving several key stages from the moment the system is powered on to when it's fully operational and ready for user interaction. Let’s break down each step in detail:
+   # Linux Boot Sequence 
 
 ### 1. **BIOS/UEFI Stage**
    - **Power-On**: When the power button is pressed, the system receives electrical power.
