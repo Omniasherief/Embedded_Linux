@@ -1,4 +1,4 @@
-When interacting with a Linux filesystem, the process of locating, accessing, and manipulating files involves several key components: **dentry**, **inode**, **data blocks**, and the **superblock**. Here's how they work together step by step when you open, read, or write to a file:
+# Interacting with a Linux filesystem
 
 ### 1. **Locate the Dentry**
    - The **dentry (directory entry)** is a structure that maps the **filename** to the corresponding **inode**.
