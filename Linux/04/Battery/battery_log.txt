@@ -1,0 +1,2 @@
+Battery Status: discharging
+Battery Capacity: 65%
