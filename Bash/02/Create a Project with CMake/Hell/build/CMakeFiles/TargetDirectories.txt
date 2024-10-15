@@ -1,0 +1,3 @@
+/home/omnia/EL/Bash/02/Create a Project with CMake/Hell/build/CMakeFiles/Hell.dir
+/home/omnia/EL/Bash/02/Create a Project with CMake/Hell/build/CMakeFiles/edit_cache.dir
+/home/omnia/EL/Bash/02/Create a Project with CMake/Hell/build/CMakeFiles/rebuild_cache.dir
