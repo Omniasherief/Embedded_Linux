@@ -1,4 +1,3 @@
-Here’s a **cool, polished README** for your voice assistant project with a sleek style:  
 
 ---
 
