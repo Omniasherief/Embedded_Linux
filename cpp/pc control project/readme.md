@@ -1,6 +1,6 @@
 
 
-# PC Control 
+# PC Control 💻
 
 ### **Overview**
 The server-client system utilizes TCP for reliable command transmission. Commands from the client control applications on the server, with responses provided by the server based on socket .
@@ -23,7 +23,7 @@ The server-client system utilizes TCP for reliable command transmission. Command
 - **Android**: [App Link](https://play.google.com/store/apps/details?id=tcpudpserverclient.steffenrvs.tcpudpserverclient)
 - **IP Retrieval Command**: `hostname -I`
 
-### **Steps to Use**
+### **Steps to Use** 🕹
 1. Choose TCP client on your app.
 2. Input the server’s IP address and port number.
 3. Connect to the server (make sure the server is running).
@@ -46,7 +46,7 @@ The server-client system utilizes TCP for reliable command transmission. Command
 - **open_custom_app <app_name>**: Opens a custom app specified by `<app_name>`.
 - **exit**: Closes the server connection.
 
-### **Troubleshooting**
+### **Troubleshooting** ⚔️
 
 - **Connection Issues**: Ensure server is active and reachable. Check firewall settings and network configurations.
 - **Command Not Working**: Verify correct command syntax and ensure required applications are installed on the server.
