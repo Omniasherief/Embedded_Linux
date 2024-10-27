@@ -3,7 +3,7 @@
 #### 1. Running the Script
 ```bash
 ./create_cpp_project.sh Hell
-
+```
 #### 2. Output Structure
 ```bash
 Hell/
