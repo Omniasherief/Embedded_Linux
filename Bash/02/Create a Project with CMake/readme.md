@@ -2,12 +2,11 @@
 
 #### 1. Running the Script
 ```bash
-./create_cpp_project.sh hello
-```
+./create_cpp_project.sh  Hell
 
 #### 2. Output Structure
 ```
-hello/
+Hell/
 ├── build/
 ├── CMakeLists.txt
 └── main.cpp
@@ -22,11 +21,11 @@ make
 
 #### 4. Running the Program
 ```bash
-./hello
+./Hell
 ```
 **Output**:
 ```
-Hello, hello!
+Hello, Hell!
 ```
 
 
