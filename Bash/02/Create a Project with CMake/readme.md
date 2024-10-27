@@ -14,7 +14,7 @@ Hell/
 
 #### 3. Building the Project
 ```bash
-cd hello/build
+cd Hell/build
 cmake ..
 make
 ```
