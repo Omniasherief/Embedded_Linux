@@ -20,12 +20,6 @@ Welcome to the **Service Management Toolkit**! This repository provides a straig
 - Ensure you have sufficient permissions to write to `/etc/systemd/system` or `/etc/init.d`.
 - The script requires `bash` to run.
 
-### 🏗️ Clone the Repository
-
-```bash
-git clone https://github.com/Omniasherief/your-repo.git
-cd your-repo
-```
 
 ### 🥇 Make the Script Executable
 
