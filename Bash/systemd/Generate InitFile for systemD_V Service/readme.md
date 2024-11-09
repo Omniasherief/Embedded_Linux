@@ -24,7 +24,7 @@ Welcome to the **Service Management Toolkit**! This repository provides a straig
 ### 🥇 Make the Script Executable
 
 ```bash
-chmod +x your_script.sh
+chmod +x first.sh
 ```
 
 ## 🔧 How to Use
@@ -34,7 +34,7 @@ chmod +x your_script.sh
    Execute the script to begin creating a service file:
 
    ```bash
-   bash your_script.sh
+   bash first.sh
    ```
 
 2. **Provide Required Information**:
