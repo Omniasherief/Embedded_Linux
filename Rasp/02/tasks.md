@@ -48,7 +48,7 @@ To control a servo motor using Raspberry Pi, you’ll need the following:
      ```
 
 3. **Video Tutorial:**  
-   ▶ [Raspberry Pi Servo Motor Control - YouTube](https://www.youtube.com/watch?v=xHDT4CwjUQE&utm_source=chatgpt.com)
+   ▶ [Raspberry Pi Servo Motor Control - YouTube](https://www.youtube.com/watch?v=xHDT4CwjUQE&utm)
 
 ---
 
@@ -83,7 +83,7 @@ To establish a connection between the Raspberry Pi and your PC via USB TTL:
      ```
 
 4. **Video Tutorial:**  
-   ▶ [Connecting Raspberry Pi to PC via TTL - YouTube](https://m.youtube.com/watch?t=94s&v=AeaBQBoi3MQ&utm_source=chatgpt.com)
+   ▶ [Connecting Raspberry Pi to PC via TTL - YouTube](https://m.youtube.com/watch?t=94s&v=AeaBQBoi3MQ&utm)
 
 ---
 
@@ -115,9 +115,10 @@ For connecting an MCU (e.g., Arduino) to Raspberry Pi over UART:
              data = ser.readline()
              print(data.decode().strip())
      ```
+     https://www.instructables.com/Raspberry-PI-Multiple-I2c-Devices/
 
 3. **Video Tutorial:**  
-   ▶ [UART Communication with Polling & Interrupt - YouTube](https://www.youtube.com/watch?v=wC9a0IkPA1A&utm_source=chatgpt.com)
+   ▶ [UART Communication with Polling & Interrupt - YouTube](https://www.youtube.com/watch?v=wC9a0IkPA1A&utm_)
 
 ---
-
+   ▶ [I2C](https://www.instructables.com/Raspberry-PI-Multiple-I2c-Devices/)
