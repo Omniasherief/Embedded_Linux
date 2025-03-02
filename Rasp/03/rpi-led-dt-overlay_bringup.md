@@ -139,7 +139,8 @@ echo 1 | sudo tee /sys/class/leds/LED/brightness
 echo 0 | sudo tee /sys/class/leds/LED/brightness
 ```
 #### Result
-![HERE:](screenshots/Screenshot from 2025-02-23 19-31-29.png)
+![HERE:](screenshots/Screenshot_2025-02-23_19-31-29.png)
+
 
 ---
 
