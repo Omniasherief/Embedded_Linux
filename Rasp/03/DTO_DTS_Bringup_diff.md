@@ -1,4 +1,4 @@
-Great question! The difference between modifying the **Device Tree Source (DTS) file** directly and using a **Device Tree Overlay (DTO)** comes down to flexibility, ease of use, and maintainability. Let’s break it down step by step.
+ The difference between modifying the **Device Tree Source (DTS) file** directly and using a **Device Tree Overlay (DTO)** comes down to flexibility, ease of use, and maintainability. Let’s break it down step by step.
 
 ---
 
