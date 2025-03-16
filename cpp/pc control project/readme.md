@@ -31,7 +31,7 @@ The server-client system utilizes TCP for reliable command transmission. Command
 #### **client**
 ![](client.jpg)
 #### **server**
-[from minute 1:30 ] [LInk](https://drive.google.com/file/d/1GysYF2xKUVPETWl0R22yKSpMChsJLbU6/view?usp=sharing)
+[from minute 1:30 ] [LInk]([https://drive.google.com/file/d/1GysYF2xKUVPETWl0R22yKSpMChsJLbU6/view?usp=sharing](https://drive.google.com/drive/folders/1wbVH0mXrP4pb-rRONal_UQfSJLPSwMLx?usp=drive_link))
 
 ### **Commands**
 
